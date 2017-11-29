@@ -1,19 +1,19 @@
 
 
 public class Product {
-	private float price;
+	private double price;
 	private String id;
 	private int quantity;
 	public Product next;
 
-	Product(float price, String id, int quantity) {
+	Product(double price, String id, int quantity) {
 		this.price = price;
 		this.id = id;
 		this.quantity = quantity;
 		next = null;
 	}
 
-	float get_price() {
+	double get_price() {
 		return price;
 	}
 
