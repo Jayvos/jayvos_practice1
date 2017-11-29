@@ -22,6 +22,29 @@ public class Inventory {
 				System.out.printf("\tQuantity: %6d\n", (traverse_node.get_quantity()));
 				break;
 			}
+			traverse_node = traverse_node.next;
 		}
 	}
+
+	void get_all() {
+		Product traverse_node = product;
+
+		while (traverse_node != null) {
+			System.out.printf("Info of product %s:\n",traverse_node.get_id());
+			System.out.printf("\tPrice: %9.2f\n", traverse_node.get_price());
+			System.out.printf("\tQuantity: %6d\n", (traverse_node.get_quantity()));
+			traverse_node = traverse_node.next;
+		}
+	}
+
+	void get_value() {
+		Product traverse_node = product;
+		double sum = 0;
+		while (traverse_node != null) {
+			sum += traverse_node.get_price() * traverse_node.get_quantity();
+			traverse_node = traverse_node.next;
+		}
+		System.out.printf("Sum of inventory: %.2f\n", sum);
+	}
+	
 }
